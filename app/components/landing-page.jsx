@@ -8,17 +8,17 @@ import {
 } from "lucide-react";
 
 import BrandMark from "./brand-mark";
-import { BenefitItem, PortfolioCard, ServiceCard } from "./cards";
+import { PricingCard, ServiceCard } from "./cards";
 import ContactForm from "./contact-form";
 import HeroVisual from "./hero-visual";
 import { getIcon } from "./icon-map";
 import SectionHeader from "./section-header";
 import {
   aboutHighlights,
-  benefits,
   contact,
+  heroProof,
   navLinks,
-  portfolioItems,
+  packages,
   processSteps,
   services,
   structuredData,
@@ -64,11 +64,11 @@ function HeroSection() {
       <div className="hero-lines" aria-hidden="true" />
       <div className="container hero-grid">
         <div className="hero-content reveal is-visible">
-          <span className="eyebrow">Tecnologia para negócios que querem crescer</span>
+          <span className="eyebrow">Sites e soluções digitais para vender melhor</span>
           <h1>Transformamos ideias em presença digital.</h1>
           <p>
-            Criamos sites, landing pages e soluções digitais modernas para empresas que querem se
-            destacar na internet.
+            Criamos sites, landing pages e sistemas com estrutura profissional, foco em conversão e
+            caminho claro para sua empresa captar mais contatos.
           </p>
           <div className="hero-actions">
             <a
@@ -85,18 +85,12 @@ function HeroSection() {
             </a>
           </div>
           <div className="hero-proof">
-            <span>
-              <CheckCircle2 size={18} />
-              Sites responsivos
-            </span>
-            <span>
-              <CheckCircle2 size={18} />
-              Foco em conversão
-            </span>
-            <span>
-              <CheckCircle2 size={18} />
-              Suporte próximo
-            </span>
+            {heroProof.map((item) => (
+              <span key={item}>
+                <CheckCircle2 size={18} />
+                {item}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -131,8 +125,8 @@ function ServicesSection() {
       <div className="container">
         <SectionHeader
           eyebrow="Serviços"
-          title="Soluções digitais para cada fase do seu negócio"
-          text="Do primeiro site ao sistema personalizado, a NotiP Tech constrói experiências digitais com estratégia, visual premium e base técnica sólida."
+          title="O que a NotiP Tech pode colocar no ar para o seu negócio"
+          text="Da presença institucional ao sistema sob medida, cada entrega nasce com objetivo comercial, acabamento profissional e base técnica pronta para crescer."
           center
         />
         <div className="services-grid">
@@ -145,26 +139,21 @@ function ServicesSection() {
   );
 }
 
-function BenefitsSection() {
+function PricingSection() {
   return (
-    <section className="section benefits-section">
-      <div className="container benefits-grid">
-        <div className="benefits-copy reveal">
-          <SectionHeader
-            eyebrow="Diferenciais"
-            title="Por que escolher a NotiP Tech?"
-            text="Unimos design, tecnologia e atendimento próximo para entregar projetos digitais que passam confiança e ajudam sua empresa a vender melhor."
-          />
-          <a className="btn btn-secondary" href="#contato">
-            Conversar sobre meu projeto
-          </a>
-        </div>
-
-        <ul className="benefits-list">
-          {benefits.map((item) => (
-            <BenefitItem key={item.title} item={item} />
+    <section className="section pricing-section" id="investimento">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Investimento"
+          title="Faixas de entrada para os projetos mais pedidos"
+          text="Valores iniciais para orientar a decisão com mais clareza. Escopo final, integrações e volume de conteúdo podem ajustar o investimento."
+          center
+        />
+        <div className="pricing-grid">
+          {packages.map((item) => (
+            <PricingCard key={item.name} item={item} />
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
@@ -178,14 +167,14 @@ function AboutSection() {
           <img className="np-watermark-logo" src="/brand/notip-np.png" alt="" aria-hidden="true" />
           <div>
             <span className="eyebrow">Sobre a NotiP Tech</span>
-            <h2>Tecnologia com direção, estética e resultado.</h2>
+            <h2>Tecnologia com direção, estética e estratégia comercial.</h2>
           </div>
         </div>
         <div className="about-text reveal">
           <p>
             A NotiP Tech nasceu para transformar ideias em soluções digitais de alto impacto. Unimos
-            tecnologia, design e estratégia para criar experiências que conectam marcas aos seus
-            clientes e geram resultados reais.
+            design, desenvolvimento e estratégia para criar experiências que posicionam melhor a marca,
+            facilitam o contato e apoiam o crescimento do negócio.
           </p>
           <div className="about-highlights">
             {aboutHighlights.map((item) => {
@@ -211,8 +200,8 @@ function ProcessSection() {
       <div className="container">
         <SectionHeader
           eyebrow="Processo"
-          title="Um caminho claro até a publicação"
-          text="Cada etapa é conduzida com transparência para que sua ideia ganhe forma sem complicação."
+          title="Um caminho simples do briefing até a publicação"
+          text="A jornada foi desenhada para dar previsibilidade, velocidade e espaço para ajustes sem perder foco no resultado."
           center
         />
         <div className="process-track">
@@ -228,54 +217,6 @@ function ProcessSection() {
   );
 }
 
-function PortfolioSection() {
-  return (
-    <section className="section portfolio-section" id="portfolio">
-      <div className="container">
-        <SectionHeader
-          eyebrow="Portfólio"
-          title="Projetos preparados para diferentes objetivos"
-          text="Modelos de entrega que representam o padrão visual e técnico aplicado nos próximos projetos da NotiP Tech."
-          center
-        />
-        <div className="portfolio-grid">
-          {portfolioItems.map((item) => (
-            <PortfolioCard key={item.title} item={item} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CtaSection() {
-  return (
-    <section className="cta-section">
-      <div className="container cta-inner reveal">
-        <div>
-          <span className="eyebrow">Vamos tirar sua ideia do papel</span>
-          <h2>Pronto para levar sua empresa para o digital?</h2>
-          <p>Vamos criar uma presença online profissional para o seu negócio.</p>
-        </div>
-        <div className="cta-actions">
-          <a
-            className="btn btn-primary"
-            href={buildWhatsAppUrl("Olá, NotiP Tech! Quero solicitar um orçamento no WhatsApp.")}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MessageCircle size={18} />
-            Solicitar orçamento no WhatsApp
-          </a>
-          <a className="btn btn-secondary" href="#contato">
-            Enviar mensagem
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ContactSection() {
   return (
     <section className="section contact-section" id="contato">
@@ -283,8 +224,8 @@ function ContactSection() {
         <div className="contact-copy reveal">
           <SectionHeader
             eyebrow="Contato"
-            title="Conte sobre o projeto que você quer construir"
-            text="Preencha o formulário e a conversa será iniciada pelo WhatsApp com as principais informações do seu projeto."
+            title="Conte qual resultado você quer gerar com seu projeto"
+            text="Preencha o formulário para iniciar a conversa com contexto. Assim fica mais fácil indicar a melhor estrutura, prazo e faixa de investimento."
           />
           <div className="contact-methods">
             <a href={`mailto:${contact.email}`}>
@@ -342,7 +283,7 @@ function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} NotiP Tech. Todos os direitos reservados.</span>
+        <span>&copy; {new Date().getFullYear()} NotiP Tech. Todos os direitos reservados.</span>
       </div>
     </footer>
   );
@@ -407,11 +348,9 @@ export default function LandingPage() {
         <HeroSection />
         <TrustStrip />
         <ServicesSection />
-        <BenefitsSection />
+        <PricingSection />
         <AboutSection />
         <ProcessSection />
-        <PortfolioSection />
-        <CtaSection />
         <ContactSection />
       </main>
       <Footer />

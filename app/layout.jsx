@@ -2,7 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
@@ -11,14 +11,14 @@ export const metadata = {
   metadataBase: new URL("https://notiptech.com.br"),
   title: "NotiP Tech | Sites, Landing Pages e Soluções Digitais",
   description:
-    "A NotiP Tech cria sites institucionais, landing pages, sistemas web e soluções digitais modernas para pequenas empresas, prestadores de serviço e negócios locais.",
+    "A NotiP Tech cria sites institucionais, landing pages e sistemas web com foco em captação, presença profissional e crescimento digital.",
   keywords: [
     "NotiP Tech",
     "criação de sites",
     "landing pages",
     "sistemas web",
     "soluções digitais",
-    "sites para pequenas empresas",
+    "site para empresa",
   ],
   authors: [{ name: "NotiP Tech" }],
   creator: "NotiP Tech",
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: "NotiP Tech | Transformando ideias em presença digital",
     description:
-      "Sites, landing pages e soluções digitais modernas para empresas que querem se destacar na internet.",
+      "Sites, landing pages e soluções digitais para empresas que querem captar mais, comunicar melhor e crescer com estrutura.",
     url: "https://notiptech.com.br",
     siteName: "NotiP Tech",
     locale: "pt_BR",
@@ -36,7 +36,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "NotiP Tech | Sites e Soluções Digitais",
     description:
-      "Transformamos ideias em presença digital com tecnologia, design e estratégia.",
+      "Transformamos ideias em presença digital com design, estratégia e estrutura técnica.",
   },
   robots: {
     index: true,

@@ -14,59 +14,25 @@ export function ServiceCard({ service }) {
   );
 }
 
-export function BenefitItem({ item }) {
-  const Icon = getIcon(item.icon);
-
+export function PricingCard({ item }) {
   return (
-    <li className="benefit-item reveal">
-      <span className="benefit-icon">
-        <Icon size={20} />
-      </span>
-      <span>{item.title}</span>
-    </li>
-  );
-}
-
-function PortfolioGallery({ item }) {
-  const [primaryImage, ...supportImages] = item.images;
-
-  return (
-    <div className={`portfolio-preview portfolio-${item.variant}`} aria-label={`Exemplos de ${item.title}`}>
-      <div className="browser-bar">
-        <span />
-        <span />
-        <span />
+    <article className={`pricing-card reveal ${item.featured ? "pricing-card-featured" : ""}`}>
+      <div className="pricing-card-top">
+        <span className="pricing-badge">{item.badge}</span>
+        <h3>{item.name}</h3>
+        <p>{item.audience}</p>
       </div>
-      <div className="portfolio-gallery">
-        <div className="portfolio-main-shot">
-          <img src={primaryImage.src} alt={primaryImage.alt} loading="lazy" />
-        </div>
-        <div className="portfolio-thumbs" aria-hidden="true">
-          {supportImages.map((image) => (
-            <img key={image.src} src={image.src} alt="" loading="lazy" />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
-export function PortfolioCard({ item }) {
-  const highlights = item.highlights ?? [];
-
-  return (
-    <article className="portfolio-card reveal">
-      <PortfolioGallery item={item} />
-      <div className="portfolio-card-body">
-        <span>{item.category}</span>
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
-        <div className="portfolio-tags" aria-label="Destaques do projeto">
-          {highlights.map((highlight) => (
-            <small key={highlight}>{highlight}</small>
-          ))}
-        </div>
+      <div className="pricing-value">
+        <strong>{item.price}</strong>
+        <small>{item.note}</small>
       </div>
+
+      <ul className="pricing-features">
+        {item.features.map((feature) => (
+          <li key={feature}>{feature}</li>
+        ))}
+      </ul>
     </article>
   );
 }

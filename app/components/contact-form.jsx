@@ -33,18 +33,23 @@ export default function ContactForm() {
             <option value="" disabled>
               Selecione uma opção
             </option>
+            <option>Landing de conversão</option>
             <option>Site institucional</option>
-            <option>Landing page</option>
-            <option>Sistema web</option>
+            <option>Sistema sob medida</option>
             <option>Manutenção ou melhorias</option>
-            <option>Consultoria em tecnologia</option>
+            <option>Quero ajuda para definir</option>
           </select>
         </label>
       </div>
 
       <label>
         Mensagem
-        <textarea name="message" rows="5" placeholder="Conte brevemente o que você precisa." required />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Conte o objetivo do projeto, público e o que você quer melhorar."
+          required
+        />
       </label>
 
       <button className="btn btn-primary form-submit" type="submit">

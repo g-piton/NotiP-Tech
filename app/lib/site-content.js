@@ -7,10 +7,16 @@ export const contact = {
 export const navLinks = [
   { href: "#inicio", label: "Início" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#investimento", label: "Investimento" },
   { href: "#sobre", label: "Sobre" },
-  { href: "#portfolio", label: "Portfólio" },
-  { href: "#processo", label: "Processo" },
   { href: "#contato", label: "Contato" },
+];
+
+export const heroProof = [
+  "Estrutura profissional para vender melhor",
+  "WhatsApp e formulário prontos para captar",
+  "SEO inicial e performance como base",
+  "Projeto com suporte e evolução",
 ];
 
 export const services = [
@@ -36,82 +42,79 @@ export const services = [
   },
   {
     title: "Integrações e APIs",
-    text: "Conexões com ferramentas, automações, pagamentos, CRM, WhatsApp e outros serviços.",
+    text: "Conexões com CRM, pagamentos, automações, WhatsApp e outros serviços.",
     icon: "link",
   },
   {
     title: "Consultoria em Tecnologia",
-    text: "Direcionamento técnico para escolher soluções digitais mais eficientes e escaláveis.",
+    text: "Direcionamento técnico para escolher a melhor estrutura digital para crescer com segurança.",
     icon: "workflow",
   },
 ];
 
-export const benefits = [
-  { title: "Design moderno e responsivo", icon: "pen" },
-  { title: "Performance e carregamento rápido", icon: "gauge" },
-  { title: "SEO básico configurado", icon: "search" },
-  { title: "Integração com WhatsApp", icon: "message" },
-  { title: "Código limpo e escalável", icon: "code" },
-  { title: "Atendimento próximo e personalizado", icon: "users" },
+export const packages = [
+  {
+    name: "Landing de Conversão",
+    audience: "Ideal para campanhas, tráfego pago e lançamentos locais.",
+    price: "a partir de R$ 1.290",
+    note: "Estrutura enxuta, copy orientada à ação e contato rápido.",
+    badge: "Entrega ágil",
+    featured: false,
+    features: [
+      "Página com oferta, prova social e CTA forte",
+      "Formulário e botão de WhatsApp integrados",
+      "SEO inicial e configuração de métricas",
+      "Ajustes finos para mobile e performance",
+    ],
+  },
+  {
+    name: "Site Institucional Pro",
+    audience: "Para empresas que precisam passar mais confiança online.",
+    price: "a partir de R$ 1.890",
+    note: "Melhor ponto de partida para fortalecer marca e gerar contatos.",
+    badge: "Mais procurado",
+    featured: true,
+    features: [
+      "Home, serviços, sobre e contato",
+      "Layout responsivo com identidade visual aplicada",
+      "WhatsApp, formulário e SEO inicial inclusos",
+      "Estrutura pronta para futuras expansões",
+    ],
+  },
+  {
+    name: "Sistema sob Medida",
+    audience: "Para operação, gestão interna e automação de processos.",
+    price: "sob consulta",
+    note: "Escopo definido por módulo, regra de negócio e integrações.",
+    badge: "Projeto customizado",
+    featured: false,
+    features: [
+      "Mapeamento da necessidade e proposta técnica",
+      "Painel administrativo e fluxo personalizado",
+      "Integrações, permissão de acesso e dados centralizados",
+      "Roadmap de evolução e suporte pós-publicação",
+    ],
+  },
 ];
 
 export const processSteps = [
-  "Entendimento da ideia",
-  "Planejamento da solução",
-  "Design e desenvolvimento",
-  "Revisão e ajustes",
-  "Publicação e suporte",
-];
-
-export const portfolioItems = [
-  {
-    title: "Site institucional",
-    category: "Presença digital",
-    text: "Estrutura elegante para negócios locais que precisam transmitir confiança desde o primeiro clique.",
-    variant: "institutional",
-    highlights: ["Identidade visual", "SEO básico", "Contato rápido"],
-    images: [
-      { src: "/portfolio/institucional-home.svg", alt: "Exemplo de home para site institucional" },
-      { src: "/portfolio/institucional-services.svg", alt: "Exemplo de seção de serviços para site institucional" },
-      { src: "/portfolio/institucional-contact.svg", alt: "Exemplo de página de contato para site institucional" },
-    ],
-  },
-  {
-    title: "Landing page comercial",
-    category: "Captação de leads",
-    text: "Página direta, estratégica e preparada para transformar campanhas em oportunidades reais.",
-    variant: "commercial",
-    highlights: ["Oferta clara", "Prova social", "Formulário leve"],
-    images: [
-      { src: "/portfolio/landing-offer.svg", alt: "Exemplo de oferta para landing page comercial" },
-      { src: "/portfolio/landing-proof.svg", alt: "Exemplo de prova social para landing page comercial" },
-      { src: "/portfolio/landing-form.svg", alt: "Exemplo de formulário para landing page comercial" },
-    ],
-  },
-  {
-    title: "Sistema web personalizado",
-    category: "Operação digital",
-    text: "Interface sob medida para centralizar informações, reduzir tarefas manuais e ganhar velocidade.",
-    variant: "system",
-    highlights: ["Dashboard", "Gestão de dados", "Responsivo"],
-    images: [
-      { src: "/portfolio/sistema-dashboard.svg", alt: "Exemplo de dashboard para sistema web" },
-      { src: "/portfolio/sistema-table.svg", alt: "Exemplo de gestão de dados para sistema web" },
-      { src: "/portfolio/sistema-mobile.svg", alt: "Exemplo de interface responsiva para sistema web" },
-    ],
-  },
+  "Entendimento do objetivo e do público",
+  "Definição da melhor estrutura de página",
+  "Design, conteúdo e desenvolvimento",
+  "Revisão final com ajustes essenciais",
+  "Publicação, acompanhamento e suporte",
 ];
 
 export const trustItems = [
-  { icon: "code", text: "Desenvolvimento de sites e sistemas" },
-  { icon: "globe", text: "Presença digital que conecta" },
-  { icon: "network", text: "Soluções que geram resultados" },
-  { icon: "shield", text: "Tecnologia com segurança" },
+  { icon: "code", text: "Projetos com base técnica sólida" },
+  { icon: "message", text: "Contato rápido por WhatsApp e formulário" },
+  { icon: "search", text: "Estrutura pronta para SEO inicial" },
+  { icon: "shield", text: "Evolução com segurança e suporte" },
 ];
 
 export const aboutHighlights = [
-  { icon: "sparkles", text: "Inovação" },
-  { icon: "gauge", text: "Foco" },
+  { icon: "sparkles", text: "Clareza" },
+  { icon: "gauge", text: "Agilidade" },
   { icon: "users", text: "Parceria" },
 ];
 
@@ -121,7 +124,7 @@ export const structuredData = {
   name: "NotiP Tech",
   slogan: "Transformando ideias em presença digital.",
   description:
-    "Criação de sites institucionais, landing pages, sistemas web e soluções digitais para pequenas empresas, prestadores de serviço e negócios locais.",
+    "Criação de sites institucionais, landing pages, sistemas web e soluções digitais com foco em captação, performance e presença profissional.",
   url: "https://notiptech.com.br",
   email: contact.email,
   telephone: contact.whatsappDisplay,
