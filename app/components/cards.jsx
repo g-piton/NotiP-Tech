@@ -27,25 +27,24 @@ export function BenefitItem({ item }) {
   );
 }
 
-function PortfolioPreview({ variant }) {
+function PortfolioGallery({ item }) {
+  const [primaryImage, ...supportImages] = item.images;
+
   return (
-    <div className={`portfolio-preview portfolio-${variant}`}>
+    <div className={`portfolio-preview portfolio-${item.variant}`} aria-label={`Exemplos de ${item.title}`}>
       <div className="browser-bar">
         <span />
         <span />
         <span />
       </div>
-      <div className="preview-content">
-        <div className="preview-sidebar" />
-        <div className="preview-main">
-          <span className="preview-line line-wide" />
-          <span className="preview-line" />
-          <span className="preview-button" />
-          <div className="preview-blocks">
-            <span />
-            <span />
-            <span />
-          </div>
+      <div className="portfolio-gallery">
+        <div className="portfolio-main-shot">
+          <img src={primaryImage.src} alt={primaryImage.alt} loading="lazy" />
+        </div>
+        <div className="portfolio-thumbs" aria-hidden="true">
+          {supportImages.map((image) => (
+            <img key={image.src} src={image.src} alt="" loading="lazy" />
+          ))}
         </div>
       </div>
     </div>
@@ -53,13 +52,20 @@ function PortfolioPreview({ variant }) {
 }
 
 export function PortfolioCard({ item }) {
+  const highlights = item.highlights ?? [];
+
   return (
     <article className="portfolio-card reveal">
-      <PortfolioPreview variant={item.variant} />
+      <PortfolioGallery item={item} />
       <div className="portfolio-card-body">
         <span>{item.category}</span>
         <h3>{item.title}</h3>
         <p>{item.text}</p>
+        <div className="portfolio-tags" aria-label="Destaques do projeto">
+          {highlights.map((highlight) => (
+            <small key={highlight}>{highlight}</small>
+          ))}
+        </div>
       </div>
     </article>
   );

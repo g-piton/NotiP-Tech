@@ -69,18 +69,36 @@ export const portfolioItems = [
     category: "Presença digital",
     text: "Estrutura elegante para negócios locais que precisam transmitir confiança desde o primeiro clique.",
     variant: "institutional",
+    highlights: ["Identidade visual", "SEO básico", "Contato rápido"],
+    images: [
+      { src: "/portfolio/institucional-home.svg", alt: "Exemplo de home para site institucional" },
+      { src: "/portfolio/institucional-services.svg", alt: "Exemplo de seção de serviços para site institucional" },
+      { src: "/portfolio/institucional-contact.svg", alt: "Exemplo de página de contato para site institucional" },
+    ],
   },
   {
     title: "Landing page comercial",
     category: "Captação de leads",
     text: "Página direta, estratégica e preparada para transformar campanhas em oportunidades reais.",
     variant: "commercial",
+    highlights: ["Oferta clara", "Prova social", "Formulário leve"],
+    images: [
+      { src: "/portfolio/landing-offer.svg", alt: "Exemplo de oferta para landing page comercial" },
+      { src: "/portfolio/landing-proof.svg", alt: "Exemplo de prova social para landing page comercial" },
+      { src: "/portfolio/landing-form.svg", alt: "Exemplo de formulário para landing page comercial" },
+    ],
   },
   {
     title: "Sistema web personalizado",
     category: "Operação digital",
     text: "Interface sob medida para centralizar informações, reduzir tarefas manuais e ganhar velocidade.",
     variant: "system",
+    highlights: ["Dashboard", "Gestão de dados", "Responsivo"],
+    images: [
+      { src: "/portfolio/sistema-dashboard.svg", alt: "Exemplo de dashboard para sistema web" },
+      { src: "/portfolio/sistema-table.svg", alt: "Exemplo de gestão de dados para sistema web" },
+      { src: "/portfolio/sistema-mobile.svg", alt: "Exemplo de interface responsiva para sistema web" },
+    ],
   },
 ];
 
