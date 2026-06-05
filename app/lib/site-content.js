@@ -7,8 +7,8 @@ export const contact = {
 export const navLinks = [
   { href: "#inicio", label: "Início" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#investimento", label: "Investimento" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#processo", label: "Processo" },
   { href: "#contato", label: "Contato" },
 ];
 

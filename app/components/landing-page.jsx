@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 import BrandMark from "./brand-mark";
-import { PricingCard, ServiceCard } from "./cards";
+import { ServiceCard } from "./cards";
 import ContactForm from "./contact-form";
 import HeroVisual from "./hero-visual";
 import { getIcon } from "./icon-map";
@@ -18,7 +18,6 @@ import {
   contact,
   heroProof,
   navLinks,
-  packages,
   processSteps,
   services,
   structuredData,
@@ -139,26 +138,6 @@ function ServicesSection() {
   );
 }
 
-function PricingSection() {
-  return (
-    <section className="section pricing-section" id="investimento">
-      <div className="container">
-        <SectionHeader
-          eyebrow="Investimento"
-          title="Faixas de entrada para os projetos mais pedidos"
-          text="Valores iniciais para orientar a decisão com mais clareza. Escopo final, integrações e volume de conteúdo podem ajustar o investimento."
-          center
-        />
-        <div className="pricing-grid">
-          {packages.map((item) => (
-            <PricingCard key={item.name} item={item} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function AboutSection() {
   return (
     <section className="section about-section" id="sobre">
@@ -225,7 +204,7 @@ function ContactSection() {
           <SectionHeader
             eyebrow="Contato"
             title="Conte qual resultado você quer gerar com seu projeto"
-            text="Preencha o formulário para iniciar a conversa com contexto. Assim fica mais fácil indicar a melhor estrutura, prazo e faixa de investimento."
+            text="Preencha o formulário para iniciar a conversa com contexto. Assim fica mais fácil indicar a melhor estrutura, prazo e escopo ideal."
           />
           <div className="contact-methods">
             <a href={`mailto:${contact.email}`}>
@@ -333,7 +312,6 @@ export default function LandingPage() {
         <HeroSection />
         <TrustStrip />
         <ServicesSection />
-        <PricingSection />
         <AboutSection />
         <ProcessSection />
         <ContactSection />
