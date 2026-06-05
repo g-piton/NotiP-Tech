@@ -1,13 +1,13 @@
 export const contact = {
-  whatsappNumber: "5519999999999",
-  whatsappDisplay: "(19) 99999-9999",
-  email: "contato@notiptech.com.br",
+  whatsappNumber: "5519981348335",
+  whatsappDisplay: "(19) 98134-8335",
+  email: "gabrielnpiton@gmail.com",
 };
 
 export const navLinks = [
   { href: "#inicio", label: "Início" },
-  { href: "#servicos", label: "Serviços" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#servicos", label: "Serviços" },
   { href: "#processo", label: "Processo" },
   { href: "#contato", label: "Contato" },
 ];

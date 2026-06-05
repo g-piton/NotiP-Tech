@@ -1,22 +1,13 @@
-import {
-  ArrowRight,
-  CheckCircle2,
-  Mail,
-  Menu,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
+import { Mail, Menu, MessageCircle, Phone } from "lucide-react";
 
 import BrandMark from "./brand-mark";
 import { ServiceCard } from "./cards";
 import ContactForm from "./contact-form";
-import HeroVisual from "./hero-visual";
 import { getIcon } from "./icon-map";
 import SectionHeader from "./section-header";
 import {
   aboutHighlights,
   contact,
-  heroProof,
   navLinks,
   processSteps,
   services,
@@ -69,31 +60,7 @@ function HeroSection() {
             Criamos sites, landing pages e sistemas com estrutura profissional, foco em conversão e
             caminho claro para sua empresa captar mais contatos.
           </p>
-          <div className="hero-actions">
-            <a
-              className="btn btn-primary"
-              href={buildWhatsAppUrl("Olá, NotiP Tech! Quero meu site profissional.")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Quero meu site profissional
-              <ArrowRight size={18} />
-            </a>
-            <a className="btn btn-secondary" href="#servicos">
-              Ver serviços
-            </a>
-          </div>
-          <div className="hero-proof">
-            {heroProof.map((item) => (
-              <span key={item}>
-                <CheckCircle2 size={18} />
-                {item}
-              </span>
-            ))}
-          </div>
         </div>
-
-        <HeroVisual />
       </div>
     </section>
   );
@@ -142,19 +109,13 @@ function AboutSection() {
   return (
     <section className="section about-section" id="sobre">
       <div className="container about-grid">
-        <div className="about-panel reveal">
-          <img className="np-watermark-logo" src="/brand/notip-np.png" alt="" aria-hidden="true" />
-          <div>
-            <span className="eyebrow">Sobre a NotiP Tech</span>
-            <h2>Tecnologia com direção, estética e estratégia comercial.</h2>
-          </div>
-        </div>
         <div className="about-text reveal">
-          <p>
-            A NotiP Tech nasceu para transformar ideias em soluções digitais de alto impacto. Unimos
-            design, desenvolvimento e estratégia para criar experiências que posicionam melhor a marca,
-            facilitam o contato e apoiam o crescimento do negócio.
-          </p>
+          <SectionHeader
+            eyebrow="Sobre a NotiP Tech"
+            title="Tecnologia com direção, estética e estratégia comercial."
+            text="A NotiP Tech nasceu para transformar ideias em soluções digitais de alto impacto. Unimos design, desenvolvimento e estratégia para criar experiências que posicionam melhor a marca, facilitam o contato e apoiam o crescimento do negócio."
+            center
+          />
           <div className="about-highlights">
             {aboutHighlights.map((item) => {
               const Icon = getIcon(item.icon);
@@ -311,8 +272,8 @@ export default function LandingPage() {
       <main>
         <HeroSection />
         <TrustStrip />
-        <ServicesSection />
         <AboutSection />
+        <ServicesSection />
         <ProcessSection />
         <ContactSection />
       </main>
