@@ -2,6 +2,8 @@ export const contact = {
   whatsappNumber: "5519981348335",
   whatsappDisplay: "(19) 98134-8335",
   email: "gabrielnpiton@gmail.com",
+  instagramUrl: "https://www.instagram.com/gabrielpiton1?utm_source=qr",
+  instagramDisplay: "@gabrielpiton1",
 };
 
 export const navLinks = [
@@ -108,7 +110,6 @@ export const processSteps = [
 export const trustItems = [
   { icon: "code", text: "Projetos com base técnica sólida" },
   { icon: "message", text: "Contato rápido por WhatsApp e formulário" },
-  { icon: "search", text: "Estrutura pronta para SEO inicial" },
   { icon: "shield", text: "Evolução com segurança e suporte" },
 ];
 
@@ -129,6 +130,6 @@ export const structuredData = {
   email: contact.email,
   telephone: contact.whatsappDisplay,
   areaServed: "Brasil",
-  sameAs: [],
+  sameAs: [contact.instagramUrl],
   serviceType: services.map((service) => service.title),
 };

@@ -1,4 +1,4 @@
-import { Mail, Menu, MessageCircle, Phone } from "lucide-react";
+import { Mail, Menu, Phone } from "lucide-react";
 
 import BrandMark from "./brand-mark";
 import { ServiceCard } from "./cards";
@@ -15,6 +15,24 @@ import {
   trustItems,
 } from "../lib/site-content";
 import { buildWhatsAppUrl } from "../lib/whatsapp";
+
+function WhatsAppIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M19.05 4.94A9.9 9.9 0 0 0 12 2a9.93 9.93 0 0 0-8.6 14.9L2 22l5.24-1.37A9.93 9.93 0 0 0 12 22a10 10 0 0 0 7.05-17.06ZM12 20.18a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.11.81.83-3.03-.2-.31A8.11 8.11 0 1 1 12 20.18Zm4.45-6.07c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.79-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.31.98 2.47c.12.16 1.68 2.56 4.07 3.59.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.4-.57 1.6-1.13.2-.56.2-1.04.14-1.13-.06-.1-.22-.16-.46-.28Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" aria-hidden="true" {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 function Header() {
   return (
@@ -36,7 +54,7 @@ function Header() {
           target="_blank"
           rel="noreferrer"
         >
-          <MessageCircle size={18} />
+          <WhatsAppIcon width="18" height="18" />
           Solicitar orçamento
         </a>
 
@@ -176,6 +194,10 @@ function ContactSection() {
               <Phone size={20} />
               {contact.whatsappDisplay}
             </a>
+            <a href={contact.instagramUrl} target="_blank" rel="noreferrer">
+              <InstagramIcon width="20" height="20" />
+              {contact.instagramDisplay}
+            </a>
           </div>
         </div>
         <ContactForm />
@@ -203,6 +225,10 @@ function Footer() {
             <a className="footer-contact-item" href={`mailto:${contact.email}`}>
               <Mail size={20} />
               <span>{contact.email}</span>
+            </a>
+            <a className="footer-contact-item" href={contact.instagramUrl} target="_blank" rel="noreferrer">
+              <InstagramIcon width="20" height="20" />
+              <span>{contact.instagramDisplay}</span>
             </a>
           </div>
         </div>
@@ -286,7 +312,7 @@ export default function LandingPage() {
         rel="noreferrer"
         aria-label="Chamar a NotiP Tech no WhatsApp"
       >
-        <MessageCircle size={26} />
+        <WhatsAppIcon width="40" height="40" />
       </a>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
