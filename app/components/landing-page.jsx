@@ -247,37 +247,22 @@ function ContactSection() {
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
-        <div className="footer-brand">
-          <BrandMark compact />
-          <p>Transformando ideias em presença digital.</p>
-        </div>
-        <div className="footer-column">
-          <h3>Links rápidos</h3>
-          <nav className="footer-links" aria-label="Links rápidos">
-            {navLinks.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <div className="footer-column">
-          <h3>Serviços</h3>
-          <nav className="footer-links" aria-label="Serviços">
-            {services.slice(0, 4).map((service) => (
-              <a key={service.title} href="#servicos">
-                {service.title}
-              </a>
-            ))}
-          </nav>
-        </div>
+      <div className="container footer-contact-card">
+        <BrandMark compact />
         <div className="footer-column footer-contact">
-          <h3>Contato</h3>
-          <div className="footer-links">
-            <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <a href={buildWhatsAppUrl("Olá, NotiP Tech! Quero conversar sobre um projeto.")}>
-              {contact.whatsappDisplay}
+          <div className="footer-contact-list">
+            <a
+              className="footer-contact-item"
+              href={buildWhatsAppUrl("Olá, NotiP Tech! Quero conversar sobre um projeto.")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Phone size={20} />
+              <span>WhatsApp {contact.whatsappDisplay}</span>
+            </a>
+            <a className="footer-contact-item" href={`mailto:${contact.email}`}>
+              <Mail size={20} />
+              <span>{contact.email}</span>
             </a>
           </div>
         </div>
